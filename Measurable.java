@@ -31,7 +31,22 @@ public interface Measurable
    */
    public static Measurable max(Measurable[] objects)
    {
-		// WRITE CODE HERE
-      return null;
+      if (objects.length == 0)
+      {
+         return null;
+      }
+
+      Measurable largest = objects[0];
+
+		for (Measurable obj : objects)
+      {
+         if (largest.getMeasurement() < obj.getMeasurement())
+         {
+            largest = obj;
+         }
+      }
+      return largest;
+
+
    }
 }
